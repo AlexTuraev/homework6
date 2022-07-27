@@ -12,20 +12,20 @@ public class Main {
         System.out.println("The amount of expenses for the month was " + summ + " RUB");
 
         System.out.println("\n-------------------- Task2 --------------------");
-        int min = 250_000;
-        int max = 0;
+        int min = arr[0];                // Исправил
+        int max = arr[0];                // Исправил
+        // можно начать с i=1, но поскольку мы не знаем, вдруг массив будет из одного эл-та, ставлю i=0
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i] > max){
+            if (arr[i] > max){
                 max = arr[i];
-            }
-            if(arr[i] < min){
+            }else if (arr[i] < min){     // Исправил
                 min = arr[i];
             }
         }
         System.out.println("The minimum amount of expenses per day was " + min + " RUB. The maximum amount of expenses per day was " + max + " RUB.");
 
         System.out.println("\n-------------------- Task3 --------------------");
-        float averageValue = (float) summ / 30;
+        float averageValue = (float) summ / arr.length; // Исправил
         System.out.println("The average amount of expenses for the month was " + averageValue + " RUB");
 
         System.out.println("\n-------------------- Task4 --------------------");
